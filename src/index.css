@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* ============================================================
+   ĐẠI VIỆT KÝ SỰ — Global Styles
+   Vietnamese Historical Cinematic Theme
+   ============================================================ */
+
+:root {
+  --bg:      #020617;
+  --surface: #0F172A;
+  --card:    #1E293B;
+  --gold:    #F59E0B;
+  --red:     #EF4444;
+  --text:    #F8FAFC;
+}
+
+/* Base reset */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #F59E0B #0F172A;
+}
+
+html::-webkit-scrollbar { width: 6px; }
+html::-webkit-scrollbar-track { background: #0F172A; }
+html::-webkit-scrollbar-thumb { background: #F59E0B; border-radius: 3px; }
+
+body {
+  margin: 0;
+  background-color: #020617;
+  color: #F8FAFC;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(248, 250, 252, 0.08);
+}
+
+/* Gold glow utility */
+.glow-gold {
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.35), 0 0 48px rgba(245, 158, 11, 0.15);
+}
+
+/* Red glow utility */
+.glow-red {
+  box-shadow: 0 0 24px rgba(239, 68, 68, 0.4), 0 0 48px rgba(239, 68, 68, 0.2);
+}
+
+/* Gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated section fade-in */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+/* Particle float */
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+  33%       { transform: translateY(-30px) translateX(10px); opacity: 0.8; }
+  66%       { transform: translateY(-15px) translateX(-8px); opacity: 0.6; }
+}
+
+/* Fog drift */
+@keyframes fog-drift {
+  0%   { transform: translateX(-10%) scaleX(1); opacity: 0.15; }
+  50%  { transform: translateX(5%) scaleX(1.05); opacity: 0.25; }
+  100% { transform: translateX(-10%) scaleX(1); opacity: 0.15; }
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); }
+  50%       { box-shadow: 0 0 40px rgba(245, 158, 11, 0.6); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* Section divider */
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #F59E0B, transparent);
+  margin: 0 auto 24px;
+  border-radius: 2px;
+}
+
+/* Timeline connector line */
+.timeline-line {
+  background: linear-gradient(180deg, transparent 0%, #F59E0B 20%, #F59E0B 80%, transparent 100%);
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline: 2px solid #F59E0B;
+  outline-offset: 3px;
+}
