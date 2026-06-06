@@ -31,7 +31,7 @@ const keyLearnings = [
   'Mâu thuẫn giai cấp xuất hiện tất yếu khi có tư hữu và phân hóa xã hội.',
   'Mâu thuẫn giai cấp không thể tự điều hòa — đây là tiền đề trực tiếp của Nhà nước.',
   'Nhà nước không trung lập: nó đại diện cho lợi ích của giai cấp thống trị.',
-  'Câu chuyện Đại Việt và thực tiễn Việt Nam hiện đại đều minh họa lý luận Lenin.',
+  'Câu chuyện mô phỏng Đại Việt minh họa rõ lý luận của Lenin về Nhà nước.',
   'Lenin đúng: Nhà nước là sản phẩm và biểu hiện của mâu thuẫn giai cấp không thể điều hòa.',
 ];
 
@@ -108,7 +108,7 @@ export default function ConclusionSection() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-12"
         >
-          Thông qua câu chuyện Đại Việt, các mô phỏng tương tác và các ví dụ thực tiễn, chúng ta đã hiểu rằng{' '}
+          Thông qua câu chuyện mô phỏng Đại Việt và các hoạt động tương tác, chúng ta đã hiểu rằng{' '}
           <span className="text-amber-400 font-semibold">Nhà nước không xuất hiện ngẫu nhiên</span>.
           Nhà nước là kết quả tất yếu của sự phát triển xã hội khi những mâu thuẫn giai cấp trở nên{' '}
           <span className="text-red-400 font-semibold">không thể tự điều hòa</span>.

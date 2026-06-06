@@ -2,14 +2,18 @@
  * content.ts — Central data store for ĐẠI VIỆT KÝ SỰ
  * All presentation content is defined here as typed arrays.
  * MLN111 — FPT University
+ *
+ * NOTE: All content is purely theoretical / educational.
+ * The historical story is a fictional simulation set in medieval feudal society.
+ * No references to modern Vietnam or any specific contemporary state.
  */
 
-// ─── Types ──────────────────────────────────────────────────────────────────
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 export interface TimelineStep {
   id: string;
   step: number;
-  icon: string;          // Lucide icon name
+  icon: string;
   title: string;
   subtitle: string;
   description: string;
@@ -24,7 +28,7 @@ export interface Character {
   role: string;
   position: string;
   classInterest: string;
-  color: string;        // Tailwind accent color key
+  color: string;
 }
 
 export interface StoryScene {
@@ -51,17 +55,6 @@ export interface StateItem {
   description: string;
 }
 
-export interface RealityCard {
-  id: string;
-  icon: string;
-  title: string;
-  category: 'conflict' | 'institution';
-  shortDesc: string;
-  detail: string;
-  leninLink: string;
-  color: string;
-}
-
 export interface QuizQuestion {
   id: string;
   question: string;
@@ -79,7 +72,7 @@ export interface Presenter {
   timeEstimate: string;
 }
 
-// ─── TIMELINE DATA (Lenin Theory) ───────────────────────────────────────────
+// ─── TIMELINE DATA (Lenin Theory) ─────────────────────────────────────────────
 
 export const timelineData: TimelineStep[] = [
   {
@@ -90,7 +83,8 @@ export const timelineData: TimelineStep[] = [
     subtitle: 'Primitive Society',
     description:
       'Con người sống chung, cùng lao động và chia sẻ tài sản. Chưa có sự phân hóa giàu nghèo, chưa có giai cấp, chưa cần Nhà nước để duy trì trật tự.',
-    example: 'Các bộ lạc Việt cổ thời kỳ đồ đá sống cộng đồng.',
+    example:
+      'Các cộng đồng bộ lạc nguyên thủy — sở hữu chung, không có người thống trị.',
     keyMessage: 'Không có giai cấp → Không cần Nhà nước.',
   },
   {
@@ -101,7 +95,8 @@ export const timelineData: TimelineStep[] = [
     subtitle: 'Private Property Emerges',
     description:
       'Công cụ sản xuất phát triển, năng suất tăng. Một số người tích lũy của cải dư thừa. Tài sản bắt đầu thuộc về cá nhân thay vì cộng đồng.',
-    example: 'Thời Văn Lang – Âu Lạc: xuất hiện sở hữu ruộng đất cá nhân.',
+    example:
+      'Trong xã hội nông nghiệp phong kiến: ruộng đất, gia súc, công cụ trở thành tài sản riêng.',
     keyMessage: 'Tư hữu là hạt giống của bất bình đẳng.',
   },
   {
@@ -113,7 +108,7 @@ export const timelineData: TimelineStep[] = [
     description:
       'Xã hội phân hóa rõ rệt: kẻ có nhiều đất đai, tài sản — người không có gì. Người giàu ngày càng giàu, người nghèo ngày càng phụ thuộc.',
     example:
-      'Triều đình phong kiến Việt Nam: địa chủ sở hữu ruộng, nông dân canh thuê.',
+      'Xã hội phong kiến phân chia thành: địa chủ sở hữu ruộng đất và nông dân lao động phụ thuộc.',
     keyMessage: 'Giai cấp có lợi ích đối lập nhau về kinh tế.',
   },
   {
@@ -124,7 +119,8 @@ export const timelineData: TimelineStep[] = [
     subtitle: 'Class Conflicts Appear',
     description:
       'Địa chủ muốn giữ và mở rộng đất. Nông dân muốn sống đủ ăn và được công bằng. Lợi ích đối kháng nhau — mâu thuẫn bắt đầu nảy sinh.',
-    example: 'Nông dân Đại Việt không nộp đủ tô thuế bị đuổi khỏi ruộng.',
+    example:
+      'Nông dân không nộp đủ tô thuế bị địa chủ đuổi khỏi ruộng — xung đột lợi ích bùng phát.',
     keyMessage: 'Lợi ích đối lập → Xung đột không tránh khỏi.',
   },
   {
@@ -136,7 +132,7 @@ export const timelineData: TimelineStep[] = [
     description:
       'Mâu thuẫn leo thang đến mức không thể tự giải quyết. Không có cơ chế trung gian nào đủ mạnh để ngăn xung đột bùng nổ.',
     example:
-      'Nông dân khởi nghĩa chống áp bức: Lý Bí, Đinh Bộ Lĩnh, phong trào Tây Sơn…',
+      'Các cuộc khởi nghĩa nông dân trong lịch sử phong kiến thế giới — biểu hiện của mâu thuẫn không thể hòa giải.',
     keyMessage: 'Mâu thuẫn không thể tự hòa giải → cần cơ chế cưỡng chế.',
   },
   {
@@ -147,13 +143,14 @@ export const timelineData: TimelineStep[] = [
     subtitle: 'The State Appears',
     description:
       'Giai cấp thống trị tạo ra bộ máy Nhà nước: luật pháp, quân đội, quan lại. Nhà nước duy trì trật tự theo cách có lợi cho giai cấp đang nắm quyền.',
-    example: 'Bộ máy quan lại phong kiến Việt Nam — Lục bộ, quan tri huyện.',
+    example:
+      'Bộ máy quan lại phong kiến trong mô phỏng Đại Việt: quan tri huyện thực thi luật pháp của giai cấp thống trị.',
     keyMessage:
       '"Nhà nước là sản phẩm và biểu hiện của những mâu thuẫn giai cấp không thể điều hòa được." — Lenin',
   },
 ];
 
-// ─── CHARACTER DATA ──────────────────────────────────────────────────────────
+// ─── CHARACTER DATA ───────────────────────────────────────────────────────────
 
 export const characterData: Character[] = [
   {
@@ -180,12 +177,12 @@ export const characterData: Character[] = [
     name: 'Quan tri huyện Lê',
     role: 'Đại diện Nhà nước',
     position: 'Công cụ quyền lực',
-    classInterest: 'Duy trì trật tự và bảo vệ lợi ích triều đình',
+    classInterest: 'Duy trì trật tự và bảo vệ lợi ích giai cấp thống trị',
     color: 'red',
   },
 ];
 
-// ─── STORY SCENES ────────────────────────────────────────────────────────────
+// ─── STORY SCENES ─────────────────────────────────────────────────────────────
 
 export const storyScenes: StoryScene[] = [
   {
@@ -230,7 +227,7 @@ export const storyScenes: StoryScene[] = [
   },
 ];
 
-// ─── DECISION SIMULATOR OPTIONS ──────────────────────────────────────────────
+// ─── DECISION SIMULATOR OPTIONS ───────────────────────────────────────────────
 
 export const decisionOptions: DecisionOption[] = [
   {
@@ -262,100 +259,23 @@ export const decisionOptions: DecisionOption[] = [
   },
 ];
 
-// ─── STATE ON/OFF DATA ───────────────────────────────────────────────────────
+// ─── STATE ON/OFF DATA ────────────────────────────────────────────────────────
 
 export const stateOnItems: StateItem[] = [
-  { icon: 'Scale',     label: 'Pháp luật',        description: 'Quy định rõ ràng về quyền và nghĩa vụ' },
-  { icon: 'Building2', label: 'Tòa án',           description: 'Giải quyết tranh chấp một cách có hệ thống' },
-  { icon: 'Shield',    label: 'Lực lượng thực thi', description: 'Đảm bảo luật pháp được tuân thủ' },
-  { icon: 'Users',     label: 'Quản lý xã hội',   description: 'Tổ chức và điều phối các hoạt động xã hội' },
+  { icon: 'Scale',     label: 'Pháp luật',            description: 'Quy tắc ràng buộc chung do Nhà nước ban hành' },
+  { icon: 'Building2', label: 'Cơ quan xét xử',       description: 'Giải quyết tranh chấp một cách có hệ thống' },
+  { icon: 'Shield',    label: 'Lực lượng cưỡng chế',  description: 'Thực thi quyền lực Nhà nước trong xã hội' },
+  { icon: 'Users',     label: 'Thiết chế quản lý',    description: 'Tổ chức và điều phối các quan hệ xã hội' },
 ];
 
 export const stateOffItems: StateItem[] = [
-  { icon: 'Swords',        label: 'Tranh chấp bạo lực',  description: 'Xung đột giải quyết bằng sức mạnh' },
-  { icon: 'Flame',         label: 'Hỗn loạn',            description: 'Không có trật tự, chuẩn mực chung' },
-  { icon: 'AlertCircle',   label: 'Xung đột gia tăng',   description: 'Mâu thuẫn leo thang không kiểm soát' },
-  { icon: 'X',             label: 'Bất ổn xã hội',       description: 'Cuộc sống trong bất an thường trực' },
+  { icon: 'Swords',      label: 'Tranh chấp bạo lực', description: 'Xung đột giải quyết bằng sức mạnh tự phát' },
+  { icon: 'Flame',       label: 'Hỗn loạn',           description: 'Không có trật tự hay chuẩn mực chung' },
+  { icon: 'AlertCircle', label: 'Xung đột gia tăng',  description: 'Mâu thuẫn leo thang không có cơ chế kiểm soát' },
+  { icon: 'X',           label: 'Bất ổn xã hội',      description: 'Cuộc sống trong bất an thường trực' },
 ];
 
-// ─── REALITY DASHBOARD CARDS ─────────────────────────────────────────────────
-
-export const realityCards: RealityCard[] = [
-  {
-    id: 'labor',
-    icon: 'Briefcase',
-    title: 'Tranh chấp lao động',
-    category: 'conflict',
-    shortDesc: 'Mâu thuẫn giữa người lao động và người sử dụng lao động',
-    detail:
-      'Đình công đòi tăng lương, tranh chấp hợp đồng lao động, vấn đề bảo hiểm xã hội — phản ánh mâu thuẫn giai cấp trong nền kinh tế thị trường.',
-    leninLink:
-      'Mâu thuẫn giữa người lao động (giai cấp vô sản) và chủ tư bản vẫn tồn tại — Nhà nước can thiệp qua Bộ luật Lao động.',
-    color: 'red',
-  },
-  {
-    id: 'land',
-    icon: 'Map',
-    title: 'Tranh chấp đất đai',
-    category: 'conflict',
-    shortDesc: 'Xung đột về quyền sử dụng đất và lợi ích kinh tế',
-    detail:
-      'Tranh chấp đất nông nghiệp, giải phóng mặt bằng cho dự án, tranh chấp thừa kế — xung đột về tài sản vẫn là nguồn mâu thuẫn lớn trong xã hội.',
-    leninLink:
-      'Tương tự mâu thuẫn giữa nông dân và địa chủ trong câu chuyện Đại Việt — nhưng trong bối cảnh hiện đại.',
-    color: 'yellow',
-  },
-  {
-    id: 'law',
-    icon: 'Scale',
-    title: 'Pháp luật',
-    category: 'institution',
-    shortDesc: 'Công cụ điều chỉnh hành vi xã hội của Nhà nước',
-    detail:
-      'Bộ luật Lao động, Luật Đất đai, Bộ luật Dân sự — Nhà nước dùng pháp luật để điều chỉnh mâu thuẫn lợi ích giữa các nhóm xã hội.',
-    leninLink:
-      'Pháp luật là biểu hiện ý chí của giai cấp thống trị được nâng lên thành luật — Engels.',
-    color: 'blue',
-  },
-  {
-    id: 'court',
-    icon: 'Building2',
-    title: 'Tòa án',
-    category: 'institution',
-    shortDesc: 'Thiết chế giải quyết tranh chấp của Nhà nước',
-    detail:
-      'Tòa án Nhân dân Việt Nam xét xử tranh chấp lao động, dân sự, hình sự — là cơ chế chính thức để giải quyết mâu thuẫn xã hội.',
-    leninLink:
-      'Tòa án là thiết chế Nhà nước xuất hiện trực tiếp từ nhu cầu giải quyết mâu thuẫn giai cấp.',
-    color: 'purple',
-  },
-  {
-    id: 'police',
-    icon: 'Shield',
-    title: 'Công an',
-    category: 'institution',
-    shortDesc: 'Lực lượng bảo đảm trật tự xã hội của Nhà nước',
-    detail:
-      'Công an Nhân dân Việt Nam duy trì an ninh, trật tự, bảo vệ tài sản công dân — là "đội quân đặc biệt" mà Lenin đề cập.',
-    leninLink:
-      'Lenin: Nhà nước cần "đội quân đặc biệt" để thực thi quyền lực — đây chính là lực lượng công an, quân đội.',
-    color: 'green',
-  },
-  {
-    id: 'state-vn',
-    icon: 'Flag',
-    title: 'Nhà nước Việt Nam',
-    category: 'institution',
-    shortDesc: 'Bộ máy tổ chức chính trị tối cao quản lý xã hội',
-    detail:
-      'Nhà nước CHXHCN Việt Nam quản lý kinh tế, xã hội, an ninh quốc phòng — là minh chứng sống của lý luận Lenin về nguồn gốc và vai trò của Nhà nước.',
-    leninLink:
-      'Nhà nước hiện đại vẫn thực hiện chức năng quản lý mâu thuẫn giai cấp — chứng minh tính đúng đắn của lý luận Lenin.',
-    color: 'gold',
-  },
-];
-
-// ─── QUIZ DATA ───────────────────────────────────────────────────────────────
+// ─── QUIZ DATA ────────────────────────────────────────────────────────────────
 
 export const quizData: QuizQuestion[] = [
   {
@@ -395,7 +315,7 @@ export const quizData: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Mâu thuẫn giai cấp là sự đối lập về lợi ích cơ bản giữa các giai cấp trong xã hội. Ví dụ: địa chủ muốn tối đa hóa tô thuế, nông dân muốn giữ đất và sống được. Lợi ích này đối kháng nhau về bản chất.',
+      'Mâu thuẫn giai cấp là sự đối lập về lợi ích cơ bản giữa các giai cấp trong xã hội. Ví dụ trong mô phỏng Đại Việt: địa chủ muốn tối đa hóa tô thuế, nông dân muốn giữ đất và sống được — lợi ích này đối kháng nhau về bản chất.',
   },
   {
     id: 'q4',
@@ -408,7 +328,7 @@ export const quizData: QuizQuestion[] = [
     ],
     correctIndex: 2,
     explanation:
-      'Quan tri huyện đại diện cho Nhà nước phong kiến — thực thi luật pháp do giai cấp thống trị (địa chủ, quý tộc) tạo ra. Quyết định xét xử thường có lợi cho giai cấp thống trị, thể hiện bản chất giai cấp của Nhà nước.',
+      'Quan tri huyện đại diện cho Nhà nước phong kiến — thực thi luật pháp do giai cấp thống trị tạo ra. Quyết định xét xử thường có lợi cho giai cấp thống trị, thể hiện bản chất giai cấp của Nhà nước theo phân tích của Lenin.',
   },
   {
     id: 'q5',
@@ -421,11 +341,11 @@ export const quizData: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Toàn bộ hành trình từ câu chuyện Đại Việt, timeline lý luận, đến các ví dụ thực tiễn đều hướng đến một kết luận: Nhà nước không xuất hiện ngẫu nhiên — nó là sản phẩm tất yếu khi mâu thuẫn giai cấp trở nên không thể tự điều hòa.',
+      'Toàn bộ hành trình — từ lý luận Lenin, câu chuyện mô phỏng Đại Việt, đến các hoạt động tương tác — đều hướng đến một kết luận: Nhà nước không xuất hiện ngẫu nhiên, nó là sản phẩm tất yếu khi mâu thuẫn giai cấp trở nên không thể tự điều hòa.',
   },
 ];
 
-// ─── PRESENTER DATA ──────────────────────────────────────────────────────────
+// ─── PRESENTER DATA ───────────────────────────────────────────────────────────
 
 export const presenterData: Presenter[] = [
   {
@@ -449,7 +369,7 @@ export const presenterData: Presenter[] = [
     talkingPoints: [
       'Trình bày 6 bước hình thành Nhà nước theo Lenin',
       'Giải thích từng giai đoạn trong timeline',
-      'Kết nối lý thuyết với ví dụ lịch sử Việt Nam',
+      'Kết nối lý thuyết với ví dụ từ mô phỏng Đại Việt',
       'Nhấn mạnh tính tất yếu của sự ra đời Nhà nước',
     ],
     timeEstimate: '4–5 phút',
@@ -463,7 +383,7 @@ export const presenterData: Presenter[] = [
       'Giới thiệu 3 nhân vật: Nông dân, Địa chủ, Quan tri huyện',
       'Kể 4 cảnh truyện theo trình tự',
       'Phân tích mâu thuẫn giai cấp qua từng cảnh',
-      'Kết nối câu chuyện với lý luận của Lenin',
+      'Kết nối câu chuyện mô phỏng với lý luận của Lenin',
     ],
     timeEstimate: '5–6 phút',
   },
@@ -474,7 +394,7 @@ export const presenterData: Presenter[] = [
     role: 'Người điều phối tương tác',
     talkingPoints: [
       'Điều hành Decision Simulator — hỏi ý kiến khán giả',
-      'Phân tích 3 lựa chọn và hệ quả',
+      'Phân tích 3 lựa chọn và hệ quả lý luận',
       'Thực hiện State ON/OFF Simulation',
       'Kết nối kết quả tương tác với lý luận Lenin',
     ],
@@ -483,27 +403,27 @@ export const presenterData: Presenter[] = [
   {
     id: 'phat',
     name: 'Phát',
-    section: 'Liên hệ thực tiễn',
-    role: 'Phân tích thực tiễn',
+    section: 'Quiz',
+    role: 'Người tổ chức quiz',
     talkingPoints: [
-      'Trình bày 6 ví dụ thực tiễn Việt Nam hiện đại',
-      'Phân tích mâu thuẫn lao động và đất đai',
-      'Kết nối các thiết chế Nhà nước với lý luận Lenin',
-      'Chứng minh tính thời sự của nhận định Lenin',
+      'Giới thiệu phần kiểm tra kiến thức',
+      'Đọc câu hỏi và hướng dẫn khán giả trả lời',
+      'Phân tích đáp án và giải thích lý luận',
+      'Kết nối câu trả lời với nhận định của Lenin',
     ],
     timeEstimate: '4–5 phút',
   },
   {
     id: 'quy',
     name: 'Quý',
-    section: 'Quiz & Kết luận',
+    section: 'Kết luận',
     role: 'Tổng kết & Hỏi đáp',
     talkingPoints: [
-      'Tổ chức Quiz 5 câu hỏi với khán giả',
       'Tổng kết hành trình của bài trình bày',
       'Nhấn mạnh kết luận cuối cùng về Nhà nước',
+      'Trình bày phụ lục minh bạch AI',
       'Mời câu hỏi và thảo luận từ giảng viên',
     ],
-    timeEstimate: '5–6 phút',
+    timeEstimate: '4–5 phút',
   },
 ];

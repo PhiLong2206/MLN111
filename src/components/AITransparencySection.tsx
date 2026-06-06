@@ -70,7 +70,7 @@ const REFERENCES = [
   'Giáo trình Triết học Mác - Lênin.',
   'Nội dung Chương III về Nhà nước.',
   'Tác phẩm "Nhà nước và Cách mạng" của V. I. Lenin.',
-  'Các ví dụ thực tiễn được nhóm chọn lọc và trình bày theo hướng học thuật.',
+  'Câu chuyện mô phỏng Đại Việt được xây dựng dựa trên lý luận về mâu thuẫn giai cấp trong xã hội phong kiến.',
 ];
 
 // ─── Tab: Cam kết ─────────────────────────────────────────────────────────────
@@ -217,8 +217,8 @@ function TabTaiLieu() {
       <div className="mt-6 rounded-xl bg-blue-400/8 border border-blue-400/20 px-5 py-3 flex items-start gap-3">
         <BookOpen size={15} className="text-blue-400 mt-0.5 shrink-0" />
         <p className="text-blue-200/80 text-xs leading-relaxed">
-          Các ví dụ thực tiễn trong website được nhóm chọn lọc từ thực tế Việt Nam hiện đại
-          và trình bày theo hướng phân tích học thuật, không sao chép từ AI.
+          Toàn bộ nội dung lý luận trong website được đối chiếu với giáo trình và tác phẩm
+          gốc của Lenin, trình bày theo hướng phân tích học thuật, không sao chép từ AI.
         </p>
       </div>
     </motion.div>
