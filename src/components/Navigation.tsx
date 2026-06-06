@@ -7,7 +7,6 @@ const NAV_ITEMS = [
   { id: 'theory',          label: 'Lý luận Lenin' },
   { id: 'story',           label: 'Đại Việt' },
   { id: 'interactive',     label: 'Tương tác' },
-  { id: 'reality',         label: 'Thực tiễn' },
   { id: 'quiz',            label: 'Quiz' },
   { id: 'ai-transparency', label: 'Minh bạch AI' },
   { id: 'conclusion',      label: 'Kết luận' },

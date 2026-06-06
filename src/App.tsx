@@ -18,7 +18,6 @@ import HeroSection       from './components/HeroSection';
 import TheoryTimeline    from './components/TheoryTimeline';
 import DaiVietStory      from './components/DaiVietStory';
 import InteractiveSection from './components/InteractiveSection';
-import RealityConnection from './components/RealityConnection';
 import QuizSection       from './components/QuizSection';
 import PresentationModeSection from './components/PresentationMode';
 import AITransparencySection from './components/AITransparencySection';
@@ -154,10 +153,7 @@ export default function App() {
             {/* 4 — Interactive Experience (Presenter: Sang) */}
             <InteractiveSection />
 
-            {/* 5 — Reality Connection (Presenter: Phát) */}
-            <RealityConnection />
-
-            {/* 6 — Quiz (Presenter: Quý) */}
+            {/* 5 — Quiz (Presenter: Quý) */}
             <QuizSection />
 
             {/* 7 — Presentation / Team Section */}
